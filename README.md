@@ -1,2 +1,5 @@
-# HTML-CSS_Tec206.003
- Repositório para Atividades do SENAI.
+## Repositório de Desenvolvimento de Aplicativos Front End - Senai
+
+Aluno: Júlio César Santos de Sousa Brito
+
+Professor: Leandro Ferreira
