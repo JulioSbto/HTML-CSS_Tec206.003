@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-body:#242a32;
+    --color-primary: #131219;
+    --text-color: #f4f3f3;
+    --text-form: #92929D;
+    --star-yellow: #ffbb3a;
+}
+
+html, body {
+    background-color: var(--bg-body);
+    color: #fff
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+header {
+    background-color: var(--color-primary);
+    color: var(--text-color);
+    display: flex;
+    height: 60px;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+nav a {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.link-container{
+    display: flex;
+    align-items: center;
+}
+
+.link-container img{
+margin-right: 10px;
+}
+
+.card-movies {
+    width: 70%;
+    height: 420px;
+    margin-bottom: 270px;
+}
+
+#card-movies-list {
+    padding: 40px 10px;
+}
+
+.card-movies img{
+    width: 100%;
+    height: 370px;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.card-movies-description{
+    background-color: var(--color-primary);
+    color: var(--text-color);
+    padding: 10px 0px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0px 0px 8px 8px;
+    height: 250px;
+}
+
+.card-movies-description h3{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.movies-score{
+    font-size: 14px;
+}
+
+.card-score-list {
+    padding: 0px 10px;
+}
+
+.score-container{
+    padding: 40px 0px;
+    max-width: 480px;
+}
+
+.card-score-description{
+    background-color: var(--color-primary);
+    color: var(--text-color);
+    padding: 10px 0px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 0px 8px 8px;
+    height: 300px;
+}
+
+.card-score-description h3{
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.movies-form-group {
+    margin-top: 6px;
+}
+
+.movies-form-btn{
+    gap: 10px;
+    height: 120px;
+    display: flex; 
+    justify-content: center; 
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+
+}
+
+.movie-btn {
+    width: 100px; 
+    height: 40px; 
+    background-color: var(--bg-body);
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+.movies-form-group label{
+    margin-bottom: 10px;
+    color: var(--text-form);
+}
+
+.card-movies-description-stars{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-movies-description-stars h4{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--star-yellow);
+}
+
+.card-movies-description-stars img{
+    width: 16px;
+    height: 16px;
+}
+
+.card-movies-description-stars p{
+    color: var(--text-form);
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.movies-pagination-container{
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.movies-pagination-box {
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movies-pagination-box p {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.movies-pagination-box button {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--text-color);
+    background-color: var(--color-primary);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movies-pagination-box button:disabled {
+    border: 1px solid var(--text-form);
+    background-color: var(--bg-body);
+}
+
+.movies-button-flip{
+    transform: rotate(180deg);
+}
+
