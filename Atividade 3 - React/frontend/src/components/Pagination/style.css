@@ -1,0 +1,54 @@
+.movies-pagination-container {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movies-pagination-box {
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movies-pagination-box form {
+    width: 100%;
+    display: flex;
+}
+.movies-pagination  {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--text-color);
+    cursor: pointer;
+}
+
+.movies-pagination-button svg {
+    filter: brightness(0) saturate(80%) invert(26%) sepia(19%) saturate(7395%) 
+    hue-rotate(234deg) brightness(89%) contrast(92%)
+}
+
+.movies-pagination-button:disabled {
+    background-color: var(--bg-body);
+    border: 1px solid var(--text-color);
+    cursor: unset;
+}
+
+.movies-pagination-button:disabled svg {
+    filter: none;
+}
+
+.movies-pagination-container p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--text-form);
+}
+
+.movies-flip-horizontal {
+    transform: rotate(180deg);
+}

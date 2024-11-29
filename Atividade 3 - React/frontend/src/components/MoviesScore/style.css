@@ -1,0 +1,20 @@
+.movies-score-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.movies-score-value {
+    margin: 0;
+    color: var(--star-yellow);
+    font-size: 12px;
+    font-weight: 700
+}
+
+.movies-score-count {
+    font-size: 12px;
+    color: var(--text-form);
+    margin: 4px 0 10px 0;
+}
+
