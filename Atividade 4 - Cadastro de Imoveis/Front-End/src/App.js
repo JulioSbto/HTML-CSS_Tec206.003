@@ -1,38 +1,41 @@
 import React, { useState } from 'react';
-import '../src/App.css'
-import ImoveisList from './components/ImoveisList';
 import ImovelForm from './components/ImovelForm';
+import ImoveisList from './components/ImoveisList';
+
 
 function App() {
+  const [imoveis, setImoveis] = useState([]);
   const [selectedImovel, setSelectedImovel] = useState(null);
 
-  const handleSave = () => {
+  const handleSave = (newImovel) => {
+    if (selectedImovel) {
+      setImoveis((prevImoveis) =>
+        prevImoveis.map((imovel) =>
+          imovel.id === selectedImovel.id ? newImovel : imovel
+        )
+      );
+    } else {
+      setImoveis((prevImoveis) => [
+        ...prevImoveis,
+        { ...newImovel, id: Date.now() },
+      ]);
+    }
     setSelectedImovel(null);
   };
 
+  const handleEdit = (imovel) => {
+    setSelectedImovel(imovel);
+  };
+
   return (
-    <>
-      <h1 className="title">Cadastro de Imóveis</h1> {}
-      <div className="container">
-        <div className="form-group">
-          <label htmlFor="tipoImovel">Tipo de imóvel</label>
-          <input id="tipoImovel" type="text" placeholder="Digite o tipo de imóvel" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="endereco">Endereço</label>
-          <input id="endereco" type="text" placeholder="Digite o endereço" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="numeroQuartos">Número de quartos</label>
-          <input id="numeroQuartos" type="number" placeholder="Digite o número de quartos" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="numeroBanheiros">Número de banheiros</label>
-          <input id="numeroBanheiros" type="number" placeholder="Digite o número de banheiros" />
-        </div>
-        <button onClick={handleSave}>Salvar</button> {}
+    <div className="App">
+      <div className="container-imovel-form">
+        <ImovelForm imovel={selectedImovel} onSave={handleSave} />
       </div>
-    </>
+      <div className="container-imovel-list">
+        <ImoveisList imoveis={imoveis} onSelect={handleEdit} />
+      </div>
+    </div>
   );
 }
 

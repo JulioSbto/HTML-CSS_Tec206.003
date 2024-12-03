@@ -1,24 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { createImovel, updateImovel } from '../api';
+import './ImoveisList.css';
+import '../components/ImovelForm.css';
 
 const ImovelForm = ({ imovel, onSave }) => {
   const [tipoimoveis, setTipoimoveis] = useState('');
   const [endereco, setEndereco] = useState('');
   const [numeroQuartos, setNumeroQuartos] = useState('');
-  const [numeroBanheiro, setNumeroBanheiro] = useState('');
+  const [numeroBanheiros, setNumeroBanheiros] = useState('');
 
   useEffect(() => {
     if (imovel) {
       setTipoimoveis(imovel.Tipoimoveis);
       setEndereco(imovel.Endereco);
       setNumeroQuartos(imovel.NumeroQuartos);
-      setNumeroBanheiro(imovel.NumeroBanheiro);
+      setNumeroBanheiros(imovel.NumeroBanheiro);
+    } else {
+      setTipoimoveis('');
+      setEndereco('');
+      setNumeroQuartos('');
+      setNumeroBanheiros('');
     }
   }, [imovel]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newImovel = { Tipoimoveis: tipoimoveis, Endereco: endereco, NumeroQuartos: parseInt(numeroQuartos), NumeroBanheiro: parseInt(numeroBanheiro) };
+    const newImovel = {
+      Tipoimoveis: tipoimoveis,
+      Endereco: endereco,
+      NumeroQuartos: parseInt(numeroQuartos),
+      NumeroBanheiro: parseInt(numeroBanheiros),
+    };
 
     if (imovel) {
       await updateImovel(imovel.idImoveis, newImovel);
@@ -29,26 +41,59 @@ const ImovelForm = ({ imovel, onSave }) => {
     onSave();
   };
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Tipo de Imóvel</label>
-        <input type="text" value={tipoimoveis} onChange={(e) => setTipoimoveis(e.target.value)} required />
-      </div>
-      <div>
-        <label>Endereço</label>
-        <input type="text" value={endereco} onChange={(e) => setEndereco(e.target.value)} required />
-      </div>
-      <div>
-        <label>Número de Quartos</label>
-        <input type="number" value={numeroQuartos} onChange={(e) => setNumeroQuartos(e.target.value)} required />
-      </div>
-      <div>
-        <label>Número de Banheiros</label>
-        <input type="number" value={numeroBanheiro} onChange={(e) => setNumeroBanheiro(e.target.value)} required />
-      </div>
-      <button type="submit">Salvar</button>
-    </form>
+  return React.createElement(
+    'form',
+    { onSubmit: handleSubmit, className: 'imovel-form' },
+    React.createElement('h1', { className: 'form-title' }, 'Cadastro de Imóveis'),
+    React.createElement(
+      'label',
+      null,
+      'Tipo de Imóvel',
+      React.createElement('input', {
+        type: 'text',
+        placeholder: 'Digite o tipo de imóvel',
+        value: tipoimoveis,
+        onChange: (e) => setTipoimoveis(e.target.value),
+        required: true
+      })
+    ),
+    React.createElement(
+      'label',
+      null,
+      'Endereço',
+      React.createElement('input', {
+        type: 'text',
+        placeholder: 'Digite o endereço',
+        value: endereco,
+        onChange: (e) => setEndereco(e.target.value),
+        required: true
+      })
+    ),
+    React.createElement(
+      'label',
+      null,
+      'Número de Quartos',
+      React.createElement('input', {
+        type: 'number',
+        placeholder: 'Digite o número de quartos',
+        value: numeroQuartos,
+        onChange: (e) => setNumeroQuartos(e.target.value),
+        required: true
+      })
+    ),
+    React.createElement(
+      'label',
+      null,
+      'Número de Banheiros',
+      React.createElement('input', {
+        type: 'number',
+        placeholder: 'Digite o número de banheiros',
+        value: numeroBanheiros,
+        onChange: (e) => setNumeroBanheiros(e.target.value),
+        required: true
+      })
+    ),
+    React.createElement('button', { type: 'submit' }, 'Salvar')
   );
 };
 
