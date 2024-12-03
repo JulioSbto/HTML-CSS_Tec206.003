@@ -1,0 +1,6 @@
+@CadastroDeImoveis.API_HostAddress = http://localhost:5142
+
+GET {{CadastroDeImoveis.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
