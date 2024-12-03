@@ -9,8 +9,29 @@ function Listing() {
                     <div className="col-sm-6 col-lg-4 col-x1-3 mb-3">
                         <MoviesCard />
                     </div>
+
+                    <div className="col-sm-6 col-lg-4 col-x1-3 mb-3">
+                        <MoviesCard />
+                    </div>
+
+                    <div className="col-sm-6 col-lg-4 col-x1-3 mb-3">
+                        <MoviesCard />
+                    </div>
+
+                    <div className="col-sm-6 col-lg-4 col-x1-3 mb-3">
+                        <MoviesCard />
+                    </div>
+
+                    <div className="col-sm-6 col-lg-4 col-x1-3 mb-3">
+                        <MoviesCard />
+                    </div>
+
+                    <div className="col-sm-6 col-lg-4 col-x1-3 mb-3">
+                        <MoviesCard />
+                    </div>
                 </div>
             </div>  
+            
             <Pagination />
         </>
     );

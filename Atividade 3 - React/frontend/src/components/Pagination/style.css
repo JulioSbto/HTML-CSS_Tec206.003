@@ -28,6 +28,19 @@
     cursor: pointer;
 }
 
+.movies-pagination-button {
+width: 40px;
+height: 40px;
+border-radius: 4px;
+background-color: var(--color-primary);
+display: flex;
+justify-content: center;
+align-items: center;
+border: 2px solid var(--text-color);
+cursor: pointer;
+
+}
+
 .movies-pagination-button svg {
     filter: brightness(0) saturate(80%) invert(26%) sepia(19%) saturate(7395%) 
     hue-rotate(234deg) brightness(89%) contrast(92%)

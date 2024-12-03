@@ -25,6 +25,8 @@ function MoviesCard() {
         </div>
       </div>
     </div>
+
+    
   );
 }
 
